@@ -1,0 +1,26 @@
+.reveal #footer {
+    position: fixed;
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: flex; /* This will put the pseudo element on its own line. */
+    bottom: 0;
+    width: 90%; /* Change this to whatever width you want. */
+    height: 10%;
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-top: 2px solid #f1f3f4; /* This creates the border. Replace black with whatever color you want. */
+    align-items: center;
+
+}
+
+.reveal #footer .content {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #f1f3f4;
+}
+
+.reveal #footer .footer-logo {
+    width: 10%;
+    height: 100%;
+    background-image: url('../img/bjss_logo_25_White.png');
+    background-size: cover;
+
+}

@@ -1,0 +1,41 @@
+.reveal #footer {
+    position: absolute;
+    display: flex; /* This will put the pseudo element on its own line. */
+    bottom: 0;
+    width: 100%; /* Change this to whatever width you want. */
+    height: 5%;
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    align-items: center;
+}
+
+.reveal #footer:after {
+    content: "";
+    background-image: -webkit-linear-gradient(left, rgb(4, 30, 66) 0%, rgb(0, 71, 187) 12%, rgb(151, 193, 229) 47%, rgb(219, 234, 250) 75%, rgb(255, 255, 255) 90%);
+    display: block;
+    height: 5%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.reveal #footer .content {
+    padding-left: 5px;
+    font-size: 14px;
+    color: #041e42;
+}
+
+.reveal #footer .footer-logo {
+    width: inherit;
+    max-width: 80px;
+    min-width: 80px;
+    height: 100%;
+    background-image: url('../img/bjss_logo_25_Blue&Navy (RGB).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.reveal #header {
+    border-top: 100px solid #0047bb;
+    border-right: 3000px solid transparent;
+}

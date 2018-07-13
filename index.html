@@ -6,6 +6,7 @@
 
     <title>reveal.js</title>
 
+    <link rel="stylesheet" href="css/reveal-override-white.css">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/white.css" id="theme">
 
@@ -20,16 +21,29 @@
         link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
         document.getElementsByTagName('head')[0].appendChild(link);
     </script>
+
+    <style>
+
+    </style>
+
 </head>
 <body>
 <div class="reveal">
+    <div id="header"></div>
+    <div id="footer">
+        <div class="footer-logo"></div>
+        <span class="content">Prepared for BJSS internal use. Commercial in Confidence.</span>
+    </div>
     <div class="slides">
         <section>Slide 1</section>
         <section>Slide 2</section>
-        <section id="">
-            <section>Slide 3</section>
-            <section>Slide 4</section>
+        <section>
+            <section>Slide 3.1</section>
+            <section>Slide 3.2</section>
+            <section>Slide 3.3</section>
         </section>
+        <section>Slide 4</section>
+
     </div>
 </div>
 
@@ -40,6 +54,8 @@
     // More info about config & dependencies:
     // - https://github.com/hakimel/reveal.js#configuration
     // - https://github.com/hakimel/reveal.js#dependencies
+
+    Reveal.configure({slideNumber: true});
     Reveal.initialize({
 
         multiplex: {
@@ -53,6 +69,10 @@
             {src: 'plugin/markdown/marked.js'},
             {src: 'plugin/markdown/markdown.js'},
             {src: 'plugin/notes/notes.js', async: true},
+
+            // Zoom in and out with Alt+click
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+
             {
                 src: 'plugin/highlight/highlight.js', async: true, callback: function () {
                     hljs.initHighlightingOnLoad();
