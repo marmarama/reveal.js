@@ -39,3 +39,22 @@
     border-top: 100px solid #0047bb;
     border-right: 3000px solid transparent;
 }
+
+@font-face {
+    font-family: HelvericaLTPro;
+    src: url("../css/HelveticaLTPro.otf");
+}
+
+@font-face {
+    font-family: Catamaran-Regular;
+    src: url("../css/Catamaran-Regular.ttf");
+}
+
+.reveal .slides h1, .reveal .slides h2, .reveal .slides h3 {
+    font-weight: unset;
+    font-family: HelvericaLTPro;
+}
+
+html .reveal {
+    font-family: Catamaran-Regular;
+}
