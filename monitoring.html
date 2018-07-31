@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal-override-white.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+<div class="reveal">
+    <div id="header"></div>
+    <div id="footer">
+        <div class="footer-logo"></div>
+        <span class="content">Prepared for BJSS internal use. Commercial in Confidence.</span>
+    </div>
+    <div class="slides">
+
+        <section>
+            <h1>Monitoring PoC</h1>
+            <p> Andrei Muresianu | andrei.muresianu@bjss.com </p>
+        </section>
+
+        <section>
+            <h1>Introduction</h1>
+            <p>Technologies</p>
+            <p>Architecture</p>
+            <p>Customisation</p>
+            <p>Resources</p>
+        </section>
+
+        <!--Technologies section-->
+        <section>
+            <section>
+                <h1>Technologies</h1>
+            </section>
+
+            <section>
+                <h2>CollectD</h2>
+                <p>Daemon that periodically <b>collects system and application performance metrics</b></p>
+                <p>It is capable of storing the values in a variety of ways: <b>this implementation uses RRD files</b>
+                </p>
+            </section>
+
+            <section>
+                <h2>CollectD Exporter</h2>
+                <p>An exporter for collectd that <b>transforms and exposes metrics</b> for consumption by Prometheus</p>
+                <p>It leverages collectd's native 'Network' plugin to <b>send metrics over HTTP POST</b></p>
+            </section>
+
+            <section>
+                <h2>Prometheus</h2>
+                <p>Leading <b>open source monitoring tool</b></p>
+                <p>
+                    <span class="fragment">Dimensional data.</span>
+                    <span class="fragment">Powerful queries.</span>
+                    <span class="fragment">Efficient storage.</span>
+                    <span class="fragment">Great visualisation.</span>
+                    <span class="fragment">Precise alerting.</span>
+                </p>
+            </section>
+
+            <section>
+                <h2>Grafana</h2>
+                <p>Leading <b>open source software for time series analytics</b></p>
+                <p>Integration with Prometheus through native adapter</p>
+            </section>
+
+        </section>
+        <!--Technologies section end-->
+
+        <section>
+            <h1>Architecture</h1>
+            <img src="img/architecture.jpeg">
+            <p></p>
+        </section>
+
+        <section>
+            <h1>Customisation</h1>
+            <p>Prometheus YAML configuration file</p>
+            <p><b>Easy discovery</b> of new instances through configuration management</p>
+            <p>Prometheus <b>Query language</b> (resembles NoSQL) + Grafana <b>live query editor</b></p>
+        </section>
+
+        <section>
+            <h1>Resources</h1>
+            <p>Prometheus querying -
+                <a href="https://prometheus.io/docs/prometheus/latest/querying/basics/">Prometheus.io docs</a></p>
+            <p>Prometheus in Grafana -
+                <a href="http://docs.grafana.org/features/datasources/prometheus/#using-prometheus-in-grafana">Grafana.org
+                    docs</a>
+            </p>
+            <p>CollectD Exporter Releases -
+                <a href="https://github.com/prometheus/collectd_exporter/releases">GitHub.com releases</a>
+            </p>
+            <p>Set-up instructions -
+                <a href="https://kepler.bjss.com/display/~Andrei.Muresianu/Hogarth+-+Monitoring+PoC">Authored by Andrei
+                    Muresianu</a>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+
+    Reveal.configure({slideNumber: true});
+    Reveal.initialize({
+
+        multiplex: {
+            // Example values. To generate your own, see the socket.io server instructions.
+            secret: null, // Obtained from the socket.io server. Gives this (the master) control of the presentation
+            id: '4a3c9f63fc96bcc9', // Obtained from socket.io server
+            url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh' // Location of socket.io server
+        },
+
+        dependencies: [
+            // {src: 'plugin/markdown/marked.js'},
+            // {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+
+            // Zoom in and out with Alt+click
+            // { src: 'plugin/zoom-js/zoom.js', async: true },
+
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+
+            // Multiplex dependencies
+            {src: '//cdn.socket.io/socket.io-1.3.5.js', async: true},
+            {src: 'plugin/multiplex/client.js', async: true},
+        ]
+    });
+</script>
+</body>
+</html>

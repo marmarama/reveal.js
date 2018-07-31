@@ -58,3 +58,7 @@
 html .reveal {
     font-family: Catamaran-Regular;
 }
+
+html .reveal section img {
+    border: unset;
+}
