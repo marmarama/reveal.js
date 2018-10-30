@@ -45,19 +45,22 @@
         <!--Introduction] section-->
         <section>
             <h1>Introduction</h1>
+            <p>Sprint Objective: Getting underway and gauging team velocity.</p>
+        </section>
+
+        <section>
+            <h1>Tickets</h1>
             <p><span class="fragment">@andrei.muresianu [ZN-1152] Running nightly tests for Zonza5 on Jenkins</span></p>
-            <p><span class="fragment">@james.thompson [ZN-544] Jenkins integration for Zonza 5 automated tests</span>
-            </p>
+            <p><span class="fragment">@james.thompson [ZN-544] Jenkins integration for Zonza 5 automated tests</span></p>
             <p><span class="fragment">@matt.smith [DEVOPS-5868] Test AWS backups</span></p>
-            <p><span class="fragment">@james.young [ZN-1089] Migrate package build/releaser jobs from old 'zonza-jenkins' box</span>
-            </p>
+            <p><span class="fragment">@james.young [ZN-1089] Migrate package build/releaser jobs from old 'zonza-jenkins' box</span></p>
         </section>
 
         <!--BAU section-->
         <section>
             <h1>Unexpected re-prioritisation</h1>
             <p>Due to the issues with the Compellent array reported shortly after the beginning of the sprint, the team
-                had to shift priorities and actively participate in the investigation and rescue operations</p>
+                had to shift priorities and actively participate in the investigation and rescue operations.</p>
         </section>
 
         <!--[ZN-1152] section-->
@@ -143,12 +146,24 @@
 
             <section>
                 <h1>Updates</h1>
-                <p>Started migrating jobs run in the last year</p>
+                <p>Migrated jobs run in the last year</p>
+                <p>Using single Jenkins job with package parameter, keeps Jenkins maintainable and avoids clutter</p>
+                <p>Abstraction already done by the Makefile, Docker build container, and packaging-tools</p>
+                <p>Map of package names->repos kept in the Jenkinsfile, maintained by version control</p>
+                <p>Simple to add new packages to build</p>
             </section>
 
             <section>
                 <h1>Road blocks</h1>
-                <p>Makefiles use sudo to invoke docker build</p>
+                <p>Makefiles have a lot of copy/pasted code, some of which makes bad assumptions about build environment</p>
+                <p>Easier to fix issues by fudging the build environment than updating many Makefiles in many repos</p>
+                <p>Use of explicitly configured web proxy in cloud is biggest headache - encounter connectivity issues again and again</p>
+            </section>
+
+            <section>
+                <h1>Future work/lessons learned</h1>
+                <p>Code reuse in Makefiles ("include") rather than copy/paste would make it easier to maintain</p>
+                <p>Adding transparent web proxying to core would fix a lot of build problems caused by connectivity</p>
             </section>
         </section>
     </div>
