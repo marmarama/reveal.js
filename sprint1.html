@@ -36,23 +36,35 @@
     </div>
     <div class="slides">
 
+        <!--Title section-->
         <section>
             <h1>BJSS TechOps Show 'n Tell</h1>
             <h4>Sprint 1: 17-10-2018 - 31-10-2018</h4>
         </section>
 
+        <!--Introduction] section-->
         <section>
             <h1>Introduction</h1>
-            <p>[ZN-1152] Running nightly tests for Zonza5 on Jenkins</p>
-            <p>JY TICKET</p>
-            <p>Matt TICKET</p>
-            <p>JT TICKET</p>
+            <p><span class="fragment">@andrei.muresianu [ZN-1152] Running nightly tests for Zonza5 on Jenkins</span></p>
+            <p><span class="fragment">@james.thompson [ZN-544] Jenkins integration for Zonza 5 automated tests</span>
+            </p>
+            <p><span class="fragment">@matt.smith [DEVOPS-5868] Test AWS backups</span></p>
+            <p><span class="fragment">@james.young [ZN-1089] Migrate package build/releaser jobs from old 'zonza-jenkins' box</span>
+            </p>
+        </section>
+
+        <!--BAU section-->
+        <section>
+            <h1>Unexpected re-prioritisation</h1>
+            <p>Due to the issues with the Compellent array reported shortly after the beginning of the sprint, the team
+                had to shift priorities and actively participate in the investigation and rescue operations</p>
         </section>
 
         <!--[ZN-1152] section-->
         <section>
             <section>
                 <h1>[ZN-1152] Running nightly tests for Zonza5 on Jenkins</h1>
+                <p> Andrei Muresianu | andrei.muresianu@bjss.com </p>
             </section>
 
             <section>
@@ -68,21 +80,75 @@
 
             <section>
                 <h1>Features</h1>
-                <p>Plug-ins - BlueOcean and xUnit reporter</p>
-                <p>Pipeline as Code - deployable across subscriptions</p>
-                <p>Parameterised cron entries - the pipeline is reusable</p>
-                <p>Data context - regardless of the user, the steps and results are clear</p>
+                <p><span class="fragment">Plug-ins - BlueOcean, xUnit and withPythonEnv</span></p>
+                <p><span class="fragment">Pipeline as Code - deployable across subscriptions</span></p>
+                <p><span class="fragment">Parameterised cron entries - the pipeline is reusable</span></p>
+                <p><span class="fragment">Parallelisation - tests are executed in parallel</span></p>
+                <!--<p><span class="fragment">Data context - the steps and results are clear</span></p>-->
             </section>
 
             <section>
-                <h1>Clear results history</h1>
+                <h1>Clear test results history</h1>
                 <img src="img/sprint1/test-results-history.png">
             </section>
 
             <section>
                 <h1>Road blocks</h1>
-                <p>Vidispine version in DEV stops the Functional tests from executing</p>
-                <!--<p>There is no direct integration between cucumber and xUnit (addresses View Tests)</p>-->
+                <p>[#2855] WIP - Vidispine version in DEV stops the Functional tests from executing</p>
+            </section>
+        </section>
+
+        <!--[ZN-544] section-->
+        <section>
+            <section>
+                <h1>[ZN-544] Jenkins integration for Zonza 5 automated tests</h1>
+                <p> James Thompson | james.thompson@bjss.com </p>
+            </section>
+
+            <section>
+                <h1>Updates</h1>
+                <p>New testing stack has been deployed</p>
+                <p>WIP to bring the jenkins stack in line with the one in dev</p>
+                <p>Once complete, will redeploy the stack in zonza-test</p>
+            </section>
+        </section>
+
+        <!--[DEVOPS-5868] section-->
+        <section>
+            <section>
+                <h1>[DEVOPS-5868] Test AWS backups</h1>
+                <p> Matt Smith | matt.smith@bjss.com </p>
+            </section>
+
+            <section>
+                <h1>Updates</h1>
+                <p>New Zonza DR core stack was set up</p>
+                <p>VPN from DR to Hogarth is operational</p>
+                <p>New control box was set up</p>
+            </section>
+
+            <section>
+                <h1>Road blocks</h1>
+                <p>Issues with orchestrate-network-aws --client</p>
+                <p>Connectivity issues - unable to hit repo.hogarthww.com</p>
+            </section>
+        </section>
+
+        <!--[ZN-1089] section-->
+        <section>
+            <section>
+                <h1>[ZN-1089] Migrate package build/releaser jobs from old 'zonza-jenkins' box</h1>
+                <p> James Young | james.young@bjss.com </p>
+            </section>
+
+            <section>
+                <h1>Updates</h1>
+                <p>Started migrating jobs run in the last year</p>
+            </section>
+
+            <section>
+                <h1>Road blocks</h1>
+                <p>Makefiles use sudo to invoke docker build</p>
             </section>
         </section>
     </div>
